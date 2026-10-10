@@ -1,0 +1,44 @@
+Baixaí — versão experimental 2.0.0-beta.1
+Revisão técnica inicial de dependências em 2026-10-10; não é parecer jurídico.
+
+DISTRIBUÍDOS NA APLICAÇÃO
+@ffmpeg/ffmpeg 0.12.15: MIT. Texto em public/licenses/ffmpeg-wasm-wrapper-MIT.txt.
+@ffmpeg/core 0.12.10: GPL-2.0-or-later, conforme package.json do pacote npm.
+O core ESM single-thread é copiado sem alterações por scripts/copy-engine.mjs.
+GPL v2: public/licenses/FFmpeg-GPL-2.0.txt.
+React, React DOM e Scheduler: MIT; avisos copiados dos pacotes no build.
+Archivo Black e DM Mono: SIL OFL; textos copiados dos pacotes no build.
+
+PROVENIÊNCIA
+Release: https://github.com/ffmpegwasm/ffmpeg.wasm/releases/tag/v12.15
+Fonte/receita: https://github.com/ffmpegwasm/ffmpeg.wasm/tree/v12.15
+Dockerfile: https://github.com/ffmpegwasm/ffmpeg.wasm/blob/v12.15/Dockerfile
+Base FFmpeg: https://github.com/FFmpeg/FFmpeg/tree/n5.1.4
+Metadados e integridade npm de todas as dependências: package-lock.json.
+
+A receita upstream habilita GPL e inclui x264, x265, libvpx, LAME, Ogg,
+Theora, Opus, Vorbis, zlib, libwebp, FreeType, FriBidi, HarfBuzz, libass,
+zimg e runtime Emscripten. As bibliotecas têm licenças próprias. Oferecer
+somente MP4 na interface NÃO remove as outras bibliotecas do binário.
+
+PORTÃO DE LANÇAMENTO AINDA ABERTO
+Identificar e arquivar os commits exatos das dependências do build, sobretudo
+as referências mutáveis como x264/4-cores e LAME/master. Disponibilizar fontes
+correspondentes completas, adaptações, scripts de build e avisos aplicáveis
+junto à distribuição do binário; não confundir um link ao upstream com essa
+entrega. Alternativa: produzir um build mínimo, fixado e reproduzível.
+Revisar obrigações GPL do conjunto e possíveis patentes H.264/AAC para o uso
+pretendido. Não foi escolhida uma licença nova para o código do proprietário.
+Não foi concluída uma auditoria jurídica nem uma reprodução bit a bit do core.
+
+https://ffmpegwasm.netlify.app/docs/faq/
+https://ffmpeg.org/legal.html
+
+SOMENTE DESENVOLVIMENTO
+ffmpeg-static gera vídeos sintéticos e decodifica os resultados dos testes.
+Não é importado pelo frontend, copiado para dist nem executado em backend.
+Vite, TypeScript, Vitest e Playwright são ferramentas de desenvolvimento.
+
+CONSULTA NO SITE
+public/licenses.html explica a diferença entre wrapper MIT e core GPL e
+expõe os avisos locais. public/engine e dist são gerados e ignorados pelo Git.
