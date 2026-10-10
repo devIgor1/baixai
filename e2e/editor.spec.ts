@@ -235,6 +235,23 @@ test("cancel during lazy loading does not leave a stale operation", async ({
   await expect.poll(() => page.workers().length).toBe(0);
 });
 
+test("removed banners stay absent while branding and editor remain", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: "Baixaí, início" }),
+  ).toBeVisible();
+  await expect(page.locator("button.select-button")).toBeVisible();
+  await expect(page.locator(".version, .privacy, .local-note")).toHaveCount(0);
+  await expect(page.locator("header")).not.toContainText(
+    /LAB \/ 02|EXPERIMENTAL|O vídeo fica com você/,
+  );
+  await expect(page.locator("body")).not.toContainText(
+    /Local, do início ao fim|SEM CADASTRO|SEM UPLOAD/,
+  );
+});
+
 test("mobile layout fits 390px and remains usable at 200% text size", async ({
   page,
 }) => {

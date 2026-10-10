@@ -127,25 +127,6 @@ button,
   font: 20px "DM Mono";
   margin-left: -1px;
 }
-.version {
-  font-size: 0.875rem;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-.version > span {
-  border: 1px solid #bcb7ab;
-  padding: 5px 7px;
-  font-size: 0.75rem;
-}
-.privacy {
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
 main {
   max-width: 1184px;
   margin: 0 auto;
@@ -745,33 +726,6 @@ progress {
   height: 6px;
   accent-color: var(--orange);
 }
-.local-note {
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 25px 0 20px;
-}
-.local-note p {
-  font-size: 0.75rem;
-  line-height: 1.8;
-  max-width: 720px;
-  color: var(--muted);
-}
-.local-note strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-.local-note > svg {
-  flex: none;
-}
-.local-note > span {
-  margin-left: auto;
-  flex: none;
-  font-size: 0.75rem;
-  line-height: 1.6;
-  letter-spacing: 0.06em;
-}
 .limits {
   font-size: 0.75rem;
   color: var(--muted);
@@ -906,9 +860,6 @@ dd {
   .preview-button {
     width: 100%;
   }
-  .privacy {
-    display: none;
-  }
   .trim-title {
     align-items: flex-start;
     flex-direction: column;
@@ -921,13 +872,6 @@ dd {
   .topbar {
     height: 70px;
     padding: 0 20px;
-  }
-  .version {
-    font-size: 0.75rem;
-    gap: 8px;
-  }
-  .version > span {
-    font-size: 0.75rem;
   }
   main {
     padding: 28px 18px 16px;
@@ -1004,15 +948,6 @@ dd {
   .section-bar {
     font-size: 0.75rem;
   }
-  .local-note > span {
-    display: none;
-  }
-  .local-note p {
-    font-size: 0.75rem;
-  }
-  .local-note {
-    align-items: flex-start;
-  }
   .limits {
     font-size: 0.75rem;
   }
@@ -1029,9 +964,6 @@ dd {
   }
   .preview-button {
     width: 100%;
-  }
-  .version {
-    display: none;
   }
   .trim-title {
     flex-direction: column;

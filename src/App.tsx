@@ -34,7 +34,6 @@ function Icon({
   name:
     | "arrow"
     | "upload"
-    | "lock"
     | "video"
     | "play"
     | "cut"
@@ -45,12 +44,6 @@ function Icon({
   const paths: Record<string, ReactNode> = {
     arrow: <path d="M5 12h14m-5-5 5 5-5 5" />,
     upload: <path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5" />,
-    lock: (
-      <>
-        <rect x="5" y="10" width="14" height="11" rx="2" />
-        <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3" />
-      </>
-    ),
     video: (
       <>
         <rect x="3" y="4" width="18" height="16" rx="1" />
@@ -350,12 +343,6 @@ export default function App() {
           </span>
           <span>BAIXAÍ</span>
         </a>
-        <span className="version">
-          LAB / 02 <span>EXPERIMENTAL</span>
-        </span>
-        <span className="privacy">
-          <Icon name="lock" size={16} /> O vídeo fica com você
-        </span>
       </header>
       <main id="editor">
         <div className="page-heading">
@@ -807,18 +794,6 @@ export default function App() {
             {notice}
           </p>
         )}
-        <div className="local-note">
-          <Icon name="lock" size={19} />
-          <p>
-            <strong>Local, do início ao fim.</strong> Seu vídeo não é enviado a
-            um servidor. O motor é baixado ao selecionar o primeiro arquivo.
-          </p>
-          <span>
-            SEM CADASTRO
-            <br />
-            SEM UPLOAD
-          </span>
-        </div>
         <p className="limits">
           Versão experimental · até 100 MB, 3 minutos e 1080p · um arquivo por
           vez.
