@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnologia e licenças — Baixaí</title>
+    <style>
+      body {
+        max-width: 780px;
+        margin: auto;
+        padding: 32px 24px;
+        font:
+          17px/1.65 system-ui,
+          sans-serif;
+        background: #f1eee6;
+        color: #181713;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+        overflow-wrap: anywhere;
+      }
+      h1,
+      h2 {
+        line-height: 1.2;
+        margin-top: 36px;
+      }
+      li {
+        margin-bottom: 12px;
+      }
+      .notice {
+        padding: 18px;
+        border: 1px solid #181713;
+        background: #fff8df;
+      }
+      code {
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">← Voltar ao editor</a>
+    <h1>Tecnologia e licenças</h1>
+    <p>
+      O Baixaí usa React e FFmpeg.wasm para processar um vídeo por vez no
+      navegador, em um Worker. O conteúdo dos vídeos não é enviado a um
+      servidor. Não há analytics, cadastro nem armazenamento persistente de
+      mídia nesta versão.
+    </p>
+    <p>
+      Ao selecionar um arquivo, o navegador carrega o motor de vídeo
+      (aproximadamente 31 MiB) do mesmo site. As fontes também são locais. O
+      servidor recebe pedidos dos arquivos da aplicação e pode registrar dados
+      normais de acesso, como endereço IP; isso não inclui o conteúdo do vídeo.
+    </p>
+    <h2>FFmpeg e codecs</h2>
+    <p>
+      Este software usa código do <a href="https://ffmpeg.org/">FFmpeg</a>. O
+      pacote <code>@ffmpeg/core 0.12.10</code> utilizado aqui declara
+      <a href="licenses/FFmpeg-GPL-2.0.txt">GPL versão 2 ou posterior</a>. O
+      wrapper <code>@ffmpeg/ffmpeg 0.12.15</code> usa
+      <a href="licenses/ffmpeg-wasm-wrapper-MIT.txt">MIT</a>. Essas duas
+      licenças não devem ser confundidas.
+    </p>
+    <p>
+      O build inclui bibliotecas como x264 e x265, com condições próprias, mesmo
+      quando a interface não oferece todas as suas funções. A exportação desta
+      versão usa H.264 (libx264) e áudio AAC, quando presente.
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/ffmpegwasm/ffmpeg.wasm/releases/tag/v12.15"
+          >Release upstream que identifica wrapper 0.12.15 e core 0.12.10</a
+        >.
+      </li>
+      <li>
+        <a href="https://github.com/ffmpegwasm/ffmpeg.wasm/tree/v12.15"
+          >Código do wrapper, adaptações e receita de compilação</a
+        >.
+      </li>
+      <li>
+        <a href="https://github.com/FFmpeg/FFmpeg/tree/n5.1.4"
+          >Fonte base do FFmpeg indicada pela receita</a
+        >.
+      </li>
+      <li>
+        <a href="https://ffmpegwasm.netlify.app/docs/faq/"
+          >FAQ de licenciamento do FFmpeg.wasm</a
+        >
+        e
+        <a href="https://ffmpeg.org/legal.html"
+          >considerações legais do FFmpeg</a
+        >.
+      </li>
+    </ul>
+    <p class="notice">
+      Versão experimental. Antes de distribuir publicamente o motor, concluir o
+      pacote de fontes correspondentes ao binário e a revisão das bibliotecas
+      incluídas. Links ao upstream, isoladamente, não são uma declaração de
+      cumprimento de todas as obrigações de redistribuição. Patentes de codecs
+      podem exigir avaliação específica conforme o uso e a jurisdição.
+    </p>
+    <h2>Interface e fontes</h2>
+    <ul>
+      <li><a href="licenses/react-MIT.txt">React — MIT</a>.</li>
+      <li>
+        <a href="licenses/react-dom-MIT.txt">React DOM — MIT</a> e
+        <a href="licenses/scheduler-MIT.txt">Scheduler — MIT</a>.
+      </li>
+      <li>
+        <a href="licenses/archivo-black-OFL.txt"
+          >Archivo Black — SIL Open Font License</a
+        >.
+      </li>
+      <li>
+        <a href="licenses/dm-mono-OFL.txt">DM Mono — SIL Open Font License</a>.
+      </li>
+    </ul>
+    <p>
+      Os avisos e direitos dos autores permanecem nos textos acima. Nenhuma
+      licença global foi atribuída automaticamente ao código original do Baixaí.
+    </p>
+  </body>
+</html>

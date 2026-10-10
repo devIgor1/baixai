@@ -1,20 +1,40 @@
 {
-  "name": "youtube-download",
-  "version": "1.0.0",
+  "name": "baixai",
+  "version": "2.0.0-beta.1",
   "private": true,
-  "description": "Downloader local e simples para vídeos do YouTube.",
-  "main": "server.js",
+  "type": "module",
+  "description": "Comprima, converta e corte vídeos com processamento local no navegador.",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js",
-    "test": "node --test"
+    "assets": "node scripts/copy-engine.mjs",
+    "predev": "npm run assets",
+    "dev": "vite --host 127.0.0.1 --port 4175 --strictPort",
+    "start": "npm run dev",
+    "build": "npm run assets && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4176 --strictPort",
+    "test": "vitest run src",
+    "test:fixtures": "node scripts/create-fixtures.mjs",
+    "test:e2e": "playwright test"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "ffmpeg-static": "^5.3.0",
-    "youtube-dl-exec": "^3.1.13"
+    "@ffmpeg/ffmpeg": "0.12.15",
+    "@fontsource/archivo-black": "^5.2.0",
+    "@fontsource/dm-mono": "^5.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@ffmpeg/core": "0.12.10",
+    "@playwright/test": "1.64.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "ffmpeg-static": "5.3.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.4",
+    "vitest": "5.0.3"
   }
 }

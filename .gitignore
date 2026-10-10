@@ -3,3 +3,9 @@ node_modules/
 npm-debug.log*
 downloads/
 .tools/
+dist/
+public/engine/
+.fixtures/
+test-results/
+playwright-report/
+*.tsbuildinfo
