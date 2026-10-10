@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Baixe vídeos do YouTube com uma URL, direto no seu navegador." />
+    <meta name="theme-color" content="#12110f" />
+    <title>Baixaí — YouTube downloader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Baixaí, início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" role="img">
+            <path d="M14 4v13m0 0 5-5m-5 5-5-5M5 22h18" />
+          </svg>
+        </span>
+        <span>BAIXAÍ</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <h1 id="title">SEU VÍDEO,<br /><em>SEM RODEIOS.</em></h1>
+
+        <form class="download-form" id="download-form" novalidate>
+          <label for="video-url">URL DO VÍDEO</label>
+          <div class="input-row">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M10.6 13.4a4 4 0 0 0 5.7.1l3-3a4 4 0 1 0-5.7-5.7l-1.7 1.7M13.4 10.6a4 4 0 0 0-5.7-.1l-3 3a4 4 0 1 0 5.7 5.7l1.7-1.7" />
+              </svg>
+            </span>
+            <input
+              id="video-url"
+              name="url"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://youtube.com/watch?v=..."
+              aria-describedby="form-message"
+              required
+            />
+            <button type="submit">
+              <span class="button-label">BAIXAR VÍDEO</span>
+              <span class="button-spinner" aria-hidden="true"></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </button>
+          </div>
+          <p class="message" id="form-message" role="status" aria-live="polite">Cole um link para começar.</p>
+        </form>
+
+        <article class="video-card" id="video-card" hidden>
+          <div class="thumbnail-wrap">
+            <img id="video-thumbnail" alt="" />
+            <span id="video-duration">00:00</span>
+          </div>
+          <div class="video-copy">
+            <span>PRONTO PARA BAIXAR</span>
+            <h2 id="video-title"></h2>
+            <p id="video-author"></p>
+          </div>
+          <div class="check" aria-hidden="true">✓</div>
+        </article>
+      </section>
+
+      <aside class="side-note" aria-label="Como funciona">
+        <span class="side-number">01—03</span>
+        <ol>
+          <li><strong>COLE</strong><span>o link do vídeo</span></li>
+          <li><strong>CLIQUE</strong><span>em baixar</span></li>
+          <li><strong>ASSISTA</strong><span>onde quiser</span></li>
+        </ol>
+      </aside>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
